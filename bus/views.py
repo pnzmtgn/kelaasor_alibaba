@@ -6,7 +6,7 @@ def list(request):
         "bus_name": "Auto Safar" ,
         "fight_number": "1129020R",
         "sit_number": "25" ,
-        "price": "120$" 
+        "price": "140$" 
     }
     
     return JsonResponse(bus)
