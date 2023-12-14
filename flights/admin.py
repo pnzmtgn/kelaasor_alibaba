@@ -3,9 +3,11 @@ from .models import Flight, Airport
 
 @register(Flight)
 class FlightAdmin(ModelAdmin):
-    pass
+    autocomplete_fields = ["origin"]
 
 @register(Airport)
 class AirportAdmin(ModelAdmin):
-    pass
+    list_display = ["name", "No", "city", "phone_number"]
+    search_fields = ["name", "number"]
+    list_filter = ["city"]
 

@@ -4,7 +4,7 @@ def list(request):
 
     bus = {
         "bus_name": "Auto Safar" ,
-        "fight_number": "1129020R",
+        "bus_number": "1129020R",
         "sit_number": "25" ,
         "price": "140$" 
     }
