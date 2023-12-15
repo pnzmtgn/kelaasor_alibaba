@@ -26,5 +26,6 @@ urlpatterns = [
     path('contact', contact, name="contact"),
     path('flights/', include('flights.urls')),
     path('bus/', include('bus.urls')),
+    # path('train/', include('Train.urls')),
 
     ]

@@ -18,7 +18,7 @@ class Flight(models.Model):
     name = models.CharField(max_length=100)
     number = models.CharField(max_length=100)
     capacity = models.IntegerField()
-    price = models.FloatField()
+    price = models.FloatField(help_text= "In rial")
 
     def __str__(self) -> str:
         return "{} - {}" .format(self.name, self.number)

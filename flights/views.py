@@ -1,23 +1,37 @@
 from django.http.response import HttpResponse, JsonResponse
+from .models import Flight, Airport
+from django.shortcuts import render
 
-def list(request):
-
-    flights = {
-        "flight_name": "Iran Air" ,
-        "fight_number": "8939020R",
-        "sit_number": "23" ,
-        "price": "1200$" 
+def list (request):
+    flights = Flight.objects.all()
+    f_list = {
+        'flights' : flights
     }
-    
-    return JsonResponse(flights)
+    return render (request, 'flights/list.html', context=f_list)
 
 # def list(request):
+#     flights = Flight.objects.all()
+#     flight_list = []
+#     for item in flights:
+#         dictionary = {
+#             "name" : item.name,
+#             "origin" : item.origin.name,
+#             "destination" : item.destination.name,
+#             "price" : item.price
+#         }
+#         flight_list.append(dictionary)
+#     return render(request, 'flights/list.html')
 
-#     flights = {
-#         "flight_name": "Iran Air" ,
-#         "fight_number": "8939020R",
-#         "sit_number": "23" ,
-#         "price": "1200$" 
-#     }
+
+# def list2(request):
+#     airports = Airport.objects.all()
+#     airport_list = []
+#     for item in airports:
+#         airport_dict = {
+#             "name" : item.name,
+#             "no" : item.no,
+#             "city" : item.city
+#         }
+#         airport_list.append(airport_dict)
     
-#     return JsonResponse(flights)
+#     return render(request, 'flights/list2.html')

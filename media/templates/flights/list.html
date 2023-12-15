@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 styrle="color: red">Here is my flight list page!</h1>
+    {% for item in flights %}
+        <hr>
+        <p>Origin: {{ item.origin }}</p>
+        <p>Destination: {{ item.destination }}</p>
+        <p>Time: {{ item.time}}</p>
+        <p style="color: darkmagenta;">Price: {{ item.price }}</p>
+        <p>Capacity: {{ item.capacity}}</p>
+    {% endfor %}    
+</body>
+</html>
